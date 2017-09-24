@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let newFont = UIFont.boldSystemFont(ofSize: 16.0)
+        let color = UIColor.white
+        
+        if #available(iOS 9.0, *) {
+            UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationBar.classForCoder() as! UIAppearanceContainer.Type]).setTitleTextAttributes([NSForegroundColorAttributeName: color, NSFontAttributeName: newFont], for: .normal)
+        } else {
+            // Fallback on earlier versions
+        }
+        
         return true
     }
 
